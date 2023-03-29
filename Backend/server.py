@@ -3,7 +3,7 @@ from sql_connection import get_sql_connection
 import mysql.connector
 import json
 
-import products_dao
+import product_dao
 import orders_dao
 import uom_dao
 
