@@ -20,7 +20,7 @@ def get_uom():
 
 @app.route('/getProducts', methods=['GET'])
 def get_products():
-    response = products_dao.get_all_products(connection)
+    response = product_dao.get_all_products(connection)
     response = jsonify(response)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
@@ -28,7 +28,7 @@ def get_products():
 @app.route('/insertProduct', methods=['POST'])
 def insert_product():
     request_payload = json.loads(request.form['data'])
-    product_id = products_dao.insert_new_product(connection, request_payload)
+    product_id = product_dao.insert_new_product(connection, request_payload)
     response = jsonify({
         'product_id': product_id
     })
@@ -54,7 +54,7 @@ def insert_order():
 
 @app.route('/deleteProduct', methods=['POST'])
 def delete_product():
-    return_id = products_dao.delete_product(connection, request.form['product_id'])
+    return_id = product_dao.delete_product(connection, request.form['product_id'])
     response = jsonify({
         'product_id': return_id
     })
