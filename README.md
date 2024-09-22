@@ -9,5 +9,5 @@ This is a final project for alx SWE.
 	CSS
 	JavaScript
 	Bootstrap
-	Flas
+	Flask
 	MYSQL
